@@ -399,6 +399,18 @@
     margin-top: 13px;
 }
 
+.main-login {
+    display: flex;
+    justify-content: space-between;
+    width: 150px; 
+    margin-right: 30px;
+}
+
+.main-login a {
+    font-size: 15px; /* Adjust the font size as needed */
+    text-decoration: none;
+}
+
 
 </style>
 <body>    
@@ -478,7 +490,10 @@
                     <c:choose>
             		<c:when test="${empty sessionScope.loginUser }">
                     <!-- 로그인 전 -->             
-                    <div class="navi"><a data-toggle="modal" data-target="#loginModal">로그인</a></div>
+                    <div class="main-login">
+                    	<div><a href="">로그인</a></div>                    
+                    	<div><a href="">회원가입</a></div>       
+                	</div>
                     </c:when>
                 	<c:otherwise>
                 	<!-- 로그인 후 -->
