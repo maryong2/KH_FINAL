@@ -3,6 +3,7 @@ package com.kh.yoonsart.member.model.service;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.kh.yoonsart.member.model.dao.MemberDao;
 import com.kh.yoonsart.member.model.vo.Member;
@@ -24,9 +25,10 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
+	@Transactional
 	public int insertMember(Member m) {
-		
-		return 0;
+		// 회원가입용 서비스 MemberServiceImpl 0604 - 무진
+		return memberDao.insertMember(sqlSession, m);
 	}
 
 	@Override

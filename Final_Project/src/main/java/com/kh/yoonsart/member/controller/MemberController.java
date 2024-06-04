@@ -7,6 +7,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -30,7 +32,6 @@ public class MemberController {
 	@PostMapping("login.me")
 	public ModelAndView loginMember(Member m, String saveId, ModelAndView mv,
 			                        HttpSession session, HttpServletResponse response) {
-		
 		// 아이디 저장 로직 추가
 		if(saveId != null && saveId.equals("y")) {
 			// 로그인 요청 시 아이디를 저장하겠다.
@@ -79,4 +80,92 @@ public class MemberController {
 			
 			return mv;
 	}
+	
+	// 0604 로그아웃 기능용 메소드 - 무진
+	// 로그아웃용 메소드
+		@GetMapping("logout.me")
+		public ModelAndView logoutMember(HttpSession session,
+										 ModelAndView mv) {
+			
+			session.removeAttribute("loginUser");
+			
+			// 일회성 알람문구 담아서 메인페이지로 url 재요청
+			session.setAttribute("alertMsg", "성공적으로 로그아웃 되었습니다.");
+			
+			mv.setViewName("redirect:/");
+			
+			return mv;
+		}
+	
+	// 회원 가입용 메소드 0604 - 무진
+	@GetMapping("enrollForm.me")
+	public String enrollForm() {
+		
+		// 여기서는 단순히 회원가입페이지만 포워딩
+		// /WEB-INF/views/member/memberEnrollForm.jsp
+		
+		return "member/memberEnrollForm";
+		
+	}	
+	
+	// Member Controller 회원가입 처리용 메소드 0604 - 무진
+		@PostMapping("insert.me")
+		public String insertMember(Member m, Model model, HttpSession session) {
+			
+			// 요청시 전달값 뽑기
+			
+//			System.out.println("평문 : " + m.getUserPwd());
+			
+			// 암호화 과정 
+			String encPwd = bcryptPasswordEncoder.encode(m.getUserPwd());
+//			System.out.println("암호문 : " + encPwd);
+			
+			// 커맨드 객체 방식으로 전달받은 m 의 userPwd 필드값을 encPwd 값으로 셋팅
+			m.setUserPwd(encPwd);
+			
+			int result = memberService.insertMember(m);
+			
+			// 결과에 따른 응답페이지 지정
+			if(result > 0) { // 성공
+				
+				// 일회성 알람문구 담아서 메인페이지로 url 재요청
+				session.setAttribute("alertMsg", "성공적으로 회원가입이 되었습니다.");
+				
+				// url 재요청
+				return "redirect:/";
+			} else { // 실패
+				
+				// 에러문구를 담아서 에러페이지로 포워딩
+				model.addAttribute("errorMsg","회원가입 실패");
+				
+				// 포워딩
+				// /WEB-INF/views/common/errorPage.jsp
+				return "common/errorPage";
+				
+			}
+			
+		}
+		
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

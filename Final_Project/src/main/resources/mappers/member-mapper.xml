@@ -37,22 +37,20 @@
 	
 	</select>
 
-	<!-- 회원 가입용 쿼리문 -->
+	<!-- 회원 가입용 쿼리문 mapper 0604 - 무진 -->
 	<insert id="insertMember" parameterType="member">
 		INSERT INTO MEMBER(USER_ID,
 	                       USER_PWD,
 	                       USER_NAME,
 	                       EMAIL,
-	                       GENDER,
-	                       AGE,
+	                       USER_BIRTH,
 	                       PHONE,
 	                       ADDRESS)
 	                VALUES(#{userId},
 	                       #{userPwd},
 	                       #{userName},
 	                       #{email},
-	                       #{gender},
-	                       #{age},
+	                       #{userBirth},
 	                       #{phone},
 	                       #{address})
 	</insert>

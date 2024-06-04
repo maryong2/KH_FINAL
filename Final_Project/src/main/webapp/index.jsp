@@ -442,6 +442,8 @@
 					<!-- Modal footer -->
 					<div class="modal-footer">
 						<button type="submit" class="btn btn-primary">로그인</button>
+						<!-- index.jsp 회원가입 버튼 추가 0604 - 무진 -->
+						<button type="button" class="btn btn-info" id="signupButton">회원가입</button>
 						<button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
 					</div>
 				</form>
@@ -676,6 +678,15 @@
             }
         }); 
     </script>
+    <!-- index.jsp 회원가입 버튼용 자바스크립트 구문 추가 0604 - 무진 -->
+    <script>
+   
+        $('#signupButton').click(function() {
+            window.location.href = 'enrollForm.me';
+        });
+   
+	</script>
+    
 
     <div class="footer">
         <div id="footer_1">
