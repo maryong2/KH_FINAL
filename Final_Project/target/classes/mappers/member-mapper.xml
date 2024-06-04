@@ -55,24 +55,22 @@
 	                       #{phone},
 	                       #{address})
 	</insert>
-	<!-- 회원정보 수정용 쿼리문 -->
+	<!-- mamber-mapper 회원정보 수정용 쿼리문 0604 - 무진 -->
 	<update id="updateMember" parameterType="member">
 		UPDATE MEMBER
 		    SET USER_NAME = #{userName}
 		        , EMAIL = #{email} 
-		        , AGE = #{age}
+		        , USER_BIRTH = #{userBirth}
 		        , PHONE = #{phone}
 		        , ADDRESS = #{address}
-		        , GENDER = #{gender}
-		        , MODIFY_DATE = SYSDATE
 		WHERE USER_ID = #{userId}
 		 AND STATUS = '1'
 	</update>
 	
-	<!-- 회원 탈퇴용 쿼리문 -->
+	<!-- mamber-mapper 회원 탈퇴용 쿼리문 0604 - 무진 -->
 	<update id="deleteMember" parameterType="string">
 		UPDATE MEMBER
-	    SET STATUS = 'N'
+	    SET STATUS = '2'
 		WHERE USER_ID = #{userId}
 		 AND STATUS = '1'
 	</update>

@@ -181,6 +181,33 @@ public class MemberController {
 			
 		}
 		
+		// MemberController 회원정보 수정용 메소드 0604 - 무진
+		@PostMapping("update.me")
+		public String updateMember(Member m, Model model,
+								HttpSession session) {
+			
+			
+			int result = memberService.updateMember(m);
+			if(result > 0) { // 성공
+				// 갱신된 회원의 정보를 다시 조회해와서
+				Member updateMem = memberService.loginMember(m);
+				// 기존의 loginMember 서비스를 재활용(아이디만 가지고 조회)
+				
+				// session 의 loginUser 에 덮어씌워야함
+				session.setAttribute("loginUser", updateMem);
+				session.setAttribute("alertMsg", "성공적으로 회원정보가 변경되었습니다.");
+				
+				// 마이페이지로 url 재요청
+				return "redirect:/myPage.me";
+			}else { // 실패
+				
+				// 에러문구를 담아서
+				model.addAttribute("errorMsg", "회원정보 변경 실패");
+				// 에러페이지로 포워딩
+				//  /WEB-INF/views/common/errorPage.jsp
+				return "common/errorPage";
+			}
+		}
 }
 
 

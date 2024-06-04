@@ -32,9 +32,10 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
+	@Transactional
 	public int updateMember(Member m) {
-		
-		return 0;
+		// MemberServiceImpl 회원 정보 수정용 서비스 0604 - 무진
+		return memberDao.updateMember(sqlSession, m);
 	}
 
 	@Override

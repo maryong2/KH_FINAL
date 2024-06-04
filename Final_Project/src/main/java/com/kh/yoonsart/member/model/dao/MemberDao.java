@@ -28,4 +28,10 @@ public class MemberDao {
 		
 		return sqlSession.selectOne("memberMapper.idCheck", checkId);
 	}
+	
+	// MemberDao 회원정보 수정용 메소드 0604 - 무진
+	public int updateMember(SqlSessionTemplate sqlSession, Member m) {
+		
+		  return sqlSession.update("memberMapper.updateMember", m);
+	}
 }

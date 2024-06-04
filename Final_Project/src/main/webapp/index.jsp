@@ -402,6 +402,13 @@
 
 </style>
 <body>    
+<!-- index.jsp 일회성 알람문구 처리 script 0604 - 무진 -->
+		<c:if test="${not empty sessionScope.alertMsg }">
+			<script>
+			alertify.alert('알림', '${sessionScope.alertMsg}', function(){ alertify.success('Ok'); });
+			</script>
+			<c:remove var="alertMsg" scope="session"/>
+		</c:if>
 <!-- 로그인 모달창 추가 0603 -무진 -->
     <!-- 로그인 클릭 시 뜨는 모달 (기존에는 안보이다가 위의 a 클릭 시 보임) -->
     <div class="modal fade" id="loginModal">

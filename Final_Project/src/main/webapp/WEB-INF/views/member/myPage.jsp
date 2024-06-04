@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<!-- myPage.jsp 태그리브 지시어 추가 0604 - 무진 -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,6 +33,13 @@
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/semantic.min.css"/>
 </head>
 <body>
+	<!-- myPage.jsp 일회성 알람문구 처리 script 0604 - 무진 -->
+		<c:if test="${not empty sessionScope.alertMsg }">
+			<script>
+			alertify.alert('알림', '${sessionScope.alertMsg}', function(){ alertify.success('Ok'); });
+			</script>
+			<c:remove var="alertMsg" scope="session"/>
+		</c:if>
     <!-- 마이페이지 (임시) 0604 JSP - 무진 -->
     <jsp:include page="" />
 
