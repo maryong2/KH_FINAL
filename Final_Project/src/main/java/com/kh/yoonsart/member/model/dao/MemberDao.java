@@ -22,4 +22,10 @@ public class MemberDao {
 			return sqlSession.insert("memberMapper.insertMember", m);
 			
 		}
+	
+	// MemberDao 아이디 체크용 메소드 0604 - 무진
+	public int idCheck(SqlSessionTemplate sqlSession, String checkId) {
+		
+		return sqlSession.selectOne("memberMapper.idCheck", checkId);
+	}
 }

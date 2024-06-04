@@ -30,10 +30,11 @@
 	AND STATUS = 'Y' -->
 	
 	<!-- 암호화 작업 후 : 오로지 아이디만 가지고 조회 -->
+	<!-- member-mapper 아이디 조회 쿼리문 변경 0604 - 무진 -->
 	SELECT *
 	FROM MEMBER
 	WHERE USER_ID = #{userId}
-	AND STATUS = 'Y'
+	AND STATUS = '1'
 	
 	</select>
 
@@ -65,7 +66,7 @@
 		        , GENDER = #{gender}
 		        , MODIFY_DATE = SYSDATE
 		WHERE USER_ID = #{userId}
-		 AND STATUS = 'Y'
+		 AND STATUS = '1'
 	</update>
 	
 	<!-- 회원 탈퇴용 쿼리문 -->

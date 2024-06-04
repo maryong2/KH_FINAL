@@ -42,10 +42,11 @@ public class MemberServiceImpl implements MemberService{
 		
 		return 0;
 	}
-
+	
+	// 아이디
 	@Override
 	public int idCheck(String checkId) {
 		
-		return 0;
+		return memberDao.idCheck(sqlSession, checkId);
 	}
 }

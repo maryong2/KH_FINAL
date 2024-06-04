@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.kh.yoonsart.member.model.service.MemberService;
@@ -127,7 +128,6 @@ public class MemberController {
 			
 			// 결과에 따른 응답페이지 지정
 			if(result > 0) { // 성공
-				
 				// 일회성 알람문구 담아서 메인페이지로 url 재요청
 				session.setAttribute("alertMsg", "성공적으로 회원가입이 되었습니다.");
 				
@@ -144,6 +144,29 @@ public class MemberController {
 				
 			}
 			
+		}
+		
+		// MemberController 아이디 체크용 메소드 0604 -무진
+		@ResponseBody
+		@GetMapping(value = "idCheck.me", produces = "text/html; charset=UTF-8")
+		public String idCheck(String checkId) {
+			
+			//> 중복확인 할 아이디 값이 전달 됨
+			
+			/*
+			 * int count = memberService.idCheck(checkId);
+			 * 
+			 * // count 가 1일 경우 : 이미 존재하는 아이디 (사용 불가) // count 가 0일 경우 : 존재 하지 않는 아이디 (사용
+			 * 가능) if(count > 0) { // 사용불가능 "NNNNN"
+			 * 
+			 * return "NNNNN";
+			 * 
+			 * }else { // 사용 가능 "NNNNY" return "NNNNY"; }
+			 */
+			int count = memberService.idCheck(checkId);
+			
+			return (count > 0) ? "NNNNN": "NNNNY";
+				
 		}
 		
 }
