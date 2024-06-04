@@ -473,15 +473,15 @@
     <div id="mainImage">
         <div class="swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="../resources/image/a10.jpg"></div>
-                <div class="swiper-slide"><img src="../resources/image/c11.jpg"></div>
-                <div class="swiper-slide"><img src="../resources/image/c12.jpg"></div>
-                <div class="swiper-slide"><img src="../resources/image/c13.jpg"></div>
+                <div class="swiper-slide"><img src="resources/image/a10.jpg"></div>
+                <div class="swiper-slide"><img src="resources/image/c11.jpg"></div>
+                <div class="swiper-slide"><img src="resources/image/c12.jpg"></div>
+                <div class="swiper-slide"><img src="resources/image/c13.jpg"></div>
                 
             </div>                
             <div id="main-header">                                
                 <div id="main-navi">
-                    <div><a href=""><img src="../resources/image/logo.png"id="logo"></a></div>                    
+                    <div><a href=""><img src="/resources/image/logo.png"id="logo"></a></div>                    
                     <div class="navi"><a href="">공연정보</a></div>
                     <div class="navi"><a href="">소개</a></div>
                     <div class="navi"><a href="">공지사항</a></div>                      
@@ -518,7 +518,7 @@
 
     <div class="main-top-img">        
             <div class="top-img">
-                <img src="../resources/image/b2.jpg" class="top-img">
+                <img src="resources/image/b2.jpg" class="top-img">
                 <div class="overlay">
                     <p>
                         연극어쩌구 저쩌구<br>
@@ -529,7 +529,7 @@
                 </div>
             </div>
             <div class="top-img">
-            <img src="../resources/image/b4.jpg" class="top-img">
+            <img src="resources/image/b4.jpg" class="top-img">
             <div class="overlay">
                 <p>
                     연극어쩌구 저쩌구<br>
@@ -540,7 +540,7 @@
             </div>
             </div>
             <div class="top-img">
-            <img src="../resources/image/post1.jpg" class="top-img">
+            <img src="resources/image/post1.jpg" class="top-img">
             <div class="overlay">
                 <p>
                     연극어쩌구 저쩌구<br>
@@ -551,7 +551,7 @@
             </div>
             </div>
             <div class="top-img">
-                <img src="../resources/image/b4.jpg" class="top-img">
+                <img src="resources/image/b4.jpg" class="top-img">
                 <div class="overlay">
                     <p>
                         연극어쩌구 저쩌구<br>
@@ -576,13 +576,13 @@
                         <input type=button id="category-button" value="연극">
                         <input type=button id="category-button" value="클래식">
                     </menu>
-                    <div class="schedule"><img src="../resources/image/post1.png" style="width: 100%; height: 100%;">
+                    <div class="schedule"><img src="resources/image/post1.png" style="width: 100%; height: 100%;">
                         공연제목                        
                     </div>                    
-                    <div class="schedule"><img src="../resources/image/post2.png" style="width: 100%; height: 100%;"><div class="detail-text">공연제목</div></div>
-                    <div class="schedule"><img src="../resources/image/b2.jpg" style="width: 100%; height: 100%;">공연제목</div>
-                    <div class="schedule"><img src="../resources/image/b4.jpg" style="width: 100%; height: 100%;">공연제목</div>
-                    <div class="schedule"><img src="../resources/image/b5.jpg" style="width: 100%; height: 100%;">공연제목</div>
+                    <div class="schedule"><img src="resources/image/post2.png" style="width: 100%; height: 100%;"><div class="detail-text">공연제목</div></div>
+                    <div class="schedule"><img src="resources/image/b2.jpg" style="width: 100%; height: 100%;">공연제목</div>
+                    <div class="schedule"><img src="resources/image/b4.jpg" style="width: 100%; height: 100%;">공연제목</div>
+                    <div class="schedule"><img src="resources/image/b5.jpg" style="width: 100%; height: 100%;">공연제목</div>
                     <div id="schedule-button"><input type="button" value="자세히보기" id="sc-button"></div>
                 </div>    
         </div>
@@ -591,11 +591,11 @@
         <div class="schedule-main">
             <h1 style="text-align: center;">오픈 예정</h1>
                 <div class="schedule-list">
-                    <div class="schedule"><img src="../resources/image/b1.jpg" style="width: 100%; height: 100%;">공연제목</div>                    
-                    <div class="schedule"><img src="../resources/image/b2.jpg" style="width: 100%; height: 100%;">공연제목</div>
-                    <div class="schedule"><img src="../resources/image/b3.jpg" style="width: 100%; height: 100%;">공연제목</div>
-                    <div class="schedule"><img src="../resources/image/b4.jpg" style="width: 100%; height: 100%;">공연제목</div>
-                    <div class="schedule"><img src="../resources/image/b5.jpg" style="width: 100%; height: 100%;">공연제목</div>
+                    <div class="schedule"><img src="resources/image/b1.jpg" style="width: 100%; height: 100%;">공연제목</div>                    
+                    <div class="schedule"><img src="resources/image/b2.jpg" style="width: 100%; height: 100%;">공연제목</div>
+                    <div class="schedule"><img src="resources/image/b3.jpg" style="width: 100%; height: 100%;">공연제목</div>
+                    <div class="schedule"><img src="resources/image/b4.jpg" style="width: 100%; height: 100%;">공연제목</div>
+                    <div class="schedule"><img src="resources/image/b5.jpg" style="width: 100%; height: 100%;">공연제목</div>
                     <div id="schedule-button"><input type="button" value="자세히보기" id="sc-button"></div>
                 </div>    
         </div>
@@ -658,11 +658,11 @@
         <div class="schedule-main">
             <h1 style="text-align: center;">가장 인기 있는 공연</h1>
                 <div class="schedule-list">
-                    <div class="schedule"><img src="../resources/image/b1.jpg" style="width: 100%; height: 100%;">공연제목</div>                    
-                    <div class="schedule"><img src="../resources/image/b2.jpg" style="width: 100%; height: 100%;">공연제목</div>
-                    <div class="schedule"><img src="../resources/image/b3.jpg" style="width: 100%; height: 100%;">공연제목</div>
-                    <div class="schedule"><img src="../resources/image/b4.jpg" style="width: 100%; height: 100%;">공연제목</div>
-                    <div class="schedule"><img src="../resources/image/b5.jpg" style="width: 100%; height: 100%;">공연제목</div>
+                    <div class="schedule"><img src="resources/image/b1.jpg" style="width: 100%; height: 100%;">공연제목</div>                    
+                    <div class="schedule"><img src="resources/image/b2.jpg" style="width: 100%; height: 100%;">공연제목</div>
+                    <div class="schedule"><img src="resources/image/b3.jpg" style="width: 100%; height: 100%;">공연제목</div>
+                    <div class="schedule"><img src="resources/image/b4.jpg" style="width: 100%; height: 100%;">공연제목</div>
+                    <div class="schedule"><img src="resources/image/b5.jpg" style="width: 100%; height: 100%;">공연제목</div>
                     <div id="schedule-button"><input type="button" value="자세히보기" id="sc-button"></div>
                 </div>    
         </div>
@@ -721,7 +721,7 @@
         </div>
         
         <div id="footer_2">
-            <div class="footer_logo"><a href=""><img src="./resources/image/8px+텍스트.png" alt=""></a></div>
+            <div class="footer_logo"><a href=""><img src="resources/image/8px+텍스트.png" alt=""></a></div>
             <div id="footer_text">
             <p id="footer_p1">
                 "예술을 통해 세상을 밝히는 공간, 윤슬아트홀"<br>
