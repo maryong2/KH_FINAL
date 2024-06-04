@@ -169,6 +169,18 @@ public class MemberController {
 				
 		}
 		
+		// MemberController 마이페이지조회용 메소드 0604 - 무진
+		@GetMapping("myPage.me")
+		public String myPage() {
+			
+			//System.out.println("마이페이지 요청됨");
+			log.debug("마이페이지 요청됨");
+			// 마이페이지 화면 포워딩
+			// /WEB-INF/views/member/myPage.jps
+			return "member/myPage";
+			
+		}
+		
 }
 
 

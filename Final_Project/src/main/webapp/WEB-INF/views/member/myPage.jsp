@@ -5,6 +5,30 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- jQuery library -->
+    <!-- 온라인 방식 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- 부트스트랩 및 각종 연동구문 추가 0603 -무진 -->
+     <!-- alertify 연동 구문 -->
+     <!-- 부트스트랩에서 제공하고 있는 스타일 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- 부트스트랩에서 제공하고 있는 스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- JavaScript -->
+	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+	<!-- Default theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
+	<!-- Semantic UI theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/semantic.min.css"/>
 </head>
 <body>
     <!-- 마이페이지 (임시) 0604 JSP - 무진 -->
@@ -27,40 +51,12 @@
                     <label for="email"> &nbsp; Email : </label>
                     <input type="text" class="form-control" id="email" value="${ sessionScope.loginUser.email }" name="email"> <br>
 
-                    <label for="age"> &nbsp; Age : </label>
-                    <input type="number" class="form-control" id="age" value="${ sessionScope.loginUser.age }" name="age"> <br>
-
                     <label for="phone"> &nbsp; Phone : </label>
                     <input type="tel" class="form-control" id="phone" value="${sessionScope.loginUser.phone }" name="phone"> <br>
                     
                     <label for="address"> &nbsp; Address : </label>
                     <input type="text" class="form-control" id="address" value="${sessionScope.loginUser.address }" name="address"> <br>
                     
-                    <label for=""> &nbsp; Gender : </label> &nbsp;&nbsp;
-                    <input type="radio" id="Male" value="M" name="gender">
-                    <label for="Male">남자</label> &nbsp;&nbsp;
-                    <input type="radio" id="Female" value="F" name="gender">
-                    <label for="Female">여자</label> &nbsp;&nbsp;
-                    
-                    <script>
-                    	$(function() {
-							
-                    		// loginUser 의 gender 필드값이
-                    		// 빈문자열 일 경우
-                    		// > 원래 Member 객체의 해당 필드에는 null
-                    		// > EL 구문으로 찍을 경우 없으면 아무것도X(빈문자열)
-                    		// (빈문자열과 동등비교 해야함!!)
-                    		
-                    		// "M" / "F" / ""
-                    		if("${ sessionScope.loginUser.gender}" != ""){
-                    			// 성별 정보가 있을 경우
-                    			
-                    			$("input[value=${sessionScope.loginUser.gender}]").attr("checked", true);
-                    			
-                    		}
-                    		
-						});
-                    </script>
                 </div> 
                 <br>
                 <div class="btns" align="center">

@@ -43,7 +43,7 @@ public class MemberServiceImpl implements MemberService{
 		return 0;
 	}
 	
-	// 아이디
+	// MemberServiceImpl 아이디 중복 검사용 서비스 0604 - 무진
 	@Override
 	public int idCheck(String checkId) {
 		

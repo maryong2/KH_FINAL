@@ -74,7 +74,7 @@
 		UPDATE MEMBER
 	    SET STATUS = 'N'
 		WHERE USER_ID = #{userId}
-		 AND STATUS = 'Y'
+		 AND STATUS = '1'
 	</update>
 	
 	<!-- 아이디 중복확인용 쿼리문 -->
