@@ -491,7 +491,8 @@
             		<c:when test="${empty sessionScope.loginUser }">
                     <!-- 로그인 전 -->             
                     <div class="main-login">
-                    	<div><a href="">로그인</a></div>                    
+                    	<!-- 인덱스.jsp 로그인 버튼 누르면 모달창 보여지게끔 세팅 0605 -무진 -->
+                    	<div><a data-toggle="modal" data-target="#loginModal">로그인</a></div>                    
                     	<div><a href="">회원가입</a></div>       
                 	</div>
                     </c:when>

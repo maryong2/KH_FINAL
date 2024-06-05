@@ -406,7 +406,7 @@
         function idCheck() {
             let $memberId = $("#memberId");
             $.ajax({
-                url: "<%=contextPath%>/checkId.me",
+                url: "<%=request.getContextPath()%>/checkId.me",
                 type: "post",
                 data: {memberId: $memberId.val()},
                 success: function(result) {
@@ -445,7 +445,7 @@
         function phoneCheck() {
             let $phone = $("#phone");
             $.ajax({
-                url: "<%=contextPath%>/checkPhone.me",
+                url: "<%=request.getContextPath()%>/checkPhone.me",
                 type: "post",
                 data: {phone: $phone.val()},
                 success: function(result) {
@@ -470,7 +470,7 @@
         function emailCheck() {
             let $email = $("#email");
             $.ajax({
-                url: "<%=contextPath%>/checkEmail.me",
+                url: "<%=request.getContextPath()%>/checkEmail.me",
                 type: "post",
                 data: {email: $email.val()},
                 success: function(result) {
