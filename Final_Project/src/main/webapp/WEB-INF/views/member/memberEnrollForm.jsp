@@ -470,6 +470,7 @@
         function emailCheck() {
             let $email = $("#email");
             $.ajax({
+            	// memberEnrollForm.jsp URL 주소값 변경 0605 - 무진
                 url: "<%=request.getContextPath()%>/checkEmail.me",
                 type: "post",
                 data: {email: $email.val()},
